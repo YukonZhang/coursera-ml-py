@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 def plot_data(x, y):
     # ===================== Your Code Here =====================
@@ -13,5 +13,18 @@ def plot_data(x, y):
 
 
     # ===========================================================
-
+    plt.plot(x, y,'rx',MarkerSize=10)
+    plt.ylabel('Profit in $10,000s')
+    plt.xlabel('Population of City in 10,000s')
     plt.show()
+
+
+if __name__=='__main__':
+
+    data = np.loadtxt('ex1data1.txt', delimiter=',')
+    x = data[:, 0]
+    y = data[:, 1]
+    plot_data(x,y)
+
+
+
